@@ -165,10 +165,10 @@ public class AmountTransferUtil {
             throw new IllegalArgumentException("Illegal amount, number should great than 0.");
         }
 
-        String result = "";
+        String result;
         StringBuilder mid = new StringBuilder();
 
-        int divisor = 1;
+        int divisor;
 
         if(num < 10){
             mid.append(numCh.get((int)num)); // simple chinese number
