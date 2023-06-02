@@ -39,5 +39,17 @@ public class TestAmountTransferUtil {
         System.out.println(result);
         assert result.equals("壹佰零玖");
 
+        result = AmountTransferUtil.num2CHS(107000L);
+        System.out.println(result);
+        assert result.equals("壹拾万柒仟");
+
+        result = AmountTransferUtil.num2CHS(6007L);
+        System.out.println(result);
+        assert result.equals("陆仟零柒");
+
+        result = AmountTransferUtil.num2CHS(1409L);
+        System.out.println(result);
+        assert result.equals("壹仟肆佰零玖");
+
     }
 }
