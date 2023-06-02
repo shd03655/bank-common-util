@@ -99,7 +99,7 @@ public class AmountTransferUtil {
 
         List<String> sects = new ArrayList<>();
         
-        for(int i = sLen-1; i > 0; i--){
+        for(int i = sLen-1; i >= 0; i--){
 
             c = sAmount.charAt(i);
             if(chUnit.containsKey(c) && !chUnit.containsKey(lastChar)){
