@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  *
- * This util supports to
+ * This util supports to:
  * <br> 1. use num2CHS to transfer number amount to chinese number(simple chinese) amount;
  * <br> 2. use chs2Num to transfer chinese number(simple chinese) amount to number amount;
  *
@@ -105,7 +105,6 @@ public class AmountTransferUtil {
             if(chUnit.containsKey(c) && !chUnit.containsKey(lastChar)){
                 String sect = sAmount.substring(i+1, hIdx);
                 sects.add(sect);
-
                 hIdx = i+1;
             }
 
@@ -146,7 +145,7 @@ public class AmountTransferUtil {
      *
      * <pre>
      *  input specific：
-     *     阿拉伯正整数
+     *    阿拉伯正整数
      *  output specific:
      *   （1）使用汉字：零、壹、贰、叁、肆、伍、陆、柒、捌、玖、拾、佰、仟、万、亿
      *   （2）单位万、亿可以被比它小的单位修饰，如拾万、仟万、佰亿、千亿等等
@@ -160,8 +159,51 @@ public class AmountTransferUtil {
      * @return 参考 output specific
      *
      */
-    public static String num2CHS(BigInteger num){
-        return null;
+    public static String num2CHS(long num){
+
+        if(num < 0){
+            throw new IllegalArgumentException("Illegal amount, number should great than 0.");
+        }
+
+        String result = "";
+        StringBuilder mid = new StringBuilder();
+
+        int divisor = 1;
+
+        if(num < 10){
+            mid.append(numCh.get((int)num)); // simple chinese number
+        }else{
+            if(num >= 100000000){
+                divisor = 100000000;
+            }else if(num >= 10000){
+                divisor = 10000;
+            }else if(num >= 1000){
+                divisor = 1000;
+            }else if(num >= 100){
+                divisor = 100;
+            }else {
+                divisor = 10;
+            }
+
+            long remainder = num % divisor;
+
+            mid.append(num2CHS(num / divisor));//quotient
+
+            mid.append(numCh.get(divisor));//unit
+
+            if(remainder > 0){
+
+                if(remainder * 10 < divisor){ //append zero
+                    mid.append(numCh.get(0));
+                }
+
+                mid.append(num2CHS(remainder));//remainder
+            }
+
+        }
+        result = mid.toString();
+
+        return result;
     }
 
 }
