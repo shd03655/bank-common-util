@@ -1,7 +1,5 @@
 package com.core.bank.util.validator;
 
-import com.core.bank.util.validator.AbstractValidator;
-import com.core.bank.util.validator.IdValidator;
 import org.junit.Test;
 public class TestIdValidator {
 

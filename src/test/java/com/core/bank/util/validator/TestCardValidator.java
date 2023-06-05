@@ -1,6 +1,5 @@
 package com.core.bank.util.validator;
 
-import com.core.bank.util.validator.CardValidator;
 import org.junit.Test;
 
 public class TestCardValidator {
