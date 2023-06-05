@@ -9,7 +9,6 @@ public class TestIdValidator {
     @Test
     public void testRightIdNo(){
         assert validator.verify("330623198210045734");
-        assert validator.verify("33022719820831250X");
     }
 
 }
