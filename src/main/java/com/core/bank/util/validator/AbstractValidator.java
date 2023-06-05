@@ -16,7 +16,7 @@ import java.util.Optional;
  */
 public abstract class AbstractValidator {
 
-    public static enum LEN_CHECK_MODE{
+    public enum LEN_CHECK_MODE{
         EQ, // equals
         LT, // less than
         GT // greater than

@@ -67,11 +67,7 @@ public class IdValidator extends AbstractValidator {
 
         String now = df.format(new Date());
 
-        if (Integer.parseInt(now.substring(0, 4)) < Integer.parseInt(yyyyMMdd.substring(0, 4))) {
-            return false;
-        }
-
-        return true;
+        return Integer.parseInt(now.substring(0, 4)) >= Integer.parseInt(yyyyMMdd.substring(0, 4));
 
     }
 
