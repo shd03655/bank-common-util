@@ -1,4 +1,4 @@
-package com.core.bank.validator;
+package com.core.bank.util.validator;
 
 import com.core.bank.util.validator.CardValidator;
 import org.junit.Test;

@@ -64,19 +64,16 @@ public class AmountTransferUtil {
     /**
      * <pre>
      *  input specific:
-     *   （0）输入为简体汉字
-     *   （1）使用汉字：零、壹、贰、叁、肆、伍、陆、柒、捌、玖、拾、佰、仟、万、亿
-     *   （2）单位万、亿可以被比它小的单位修饰，如拾万、仟万、佰亿、千亿等等
-     *   （3）阿拉伯数字中间有“0”时，中文大写要写“零”字，如1409应写成壹仟肆佰零玖
-     *   （4）阿拉伯数字中间连续有几个“0”时、中文大写金额中间可以只写一个“零”字，如￥6007应写成人民币陆仟零柒
-     *   （5）阿拉伯金额数字万位和个位是“0”可以不写“零”字，如107000应写成壹拾万柒仟
-     *   （6）仅包含正整数
+     *   （0）input is simple chinese characters
+     *   （1）valid characters are：零、壹、贰、叁、肆、伍、陆、柒、捌、玖、拾、佰、仟、万、亿
+     *   （2）unit can be modified the unit less than itself, for example:如拾 万、仟 万、佰 亿、千 亿等
+     *   （3）continuous zeroes is represented only one simple chinese character: "零" , for example:6007 should be showing:"陆仟零柒"
      *  output specific：
-     *     阿拉伯正整数
+     *     positive integer or zero.
      * </pre>
      *
-     * @param sAmount  参考输入说明
-     * @return 对应阿拉伯数字
+     * @param sAmount  chinese number.
+     * @return positive integer or zero according to param.
      */
     public static BigInteger chs2Num(String sAmount){
 
@@ -142,22 +139,18 @@ public class AmountTransferUtil {
     }
 
     /**
-     *
      * <pre>
-     *  input specific：
-     *    阿拉伯正整数
-     *  output specific:
-     *   （1）使用汉字：零、壹、贰、叁、肆、伍、陆、柒、捌、玖、拾、佰、仟、万、亿
-     *   （2）单位万、亿可以被比它小的单位修饰，如拾万、仟万、佰亿、千亿等等
-     *   （3）阿拉伯数字中间有“0”时，中文大写要写“零”字，如1409应写成壹仟肆佰零玖
-     *   （4）阿拉伯数字中间连续有几个“0”时、中文大写金额中间可以只写一个“零”字，如￥6007应写成人民币陆仟零柒
-     *   （5）阿拉伯金额数字万位和个位是“0”可以不写“零”字，如107000应写成壹拾万柒仟
-     *   （6）仅包含正整数
+     *  input specific:
+     *   （0）input is simple chinese characters
+     *   （1）valid characters are：零、壹、贰、叁、肆、伍、陆、柒、捌、玖、拾、佰、仟、万、亿
+     *   （2）unit can be modified the unit less than itself, for example:如拾 万、仟 万、佰 亿、千 亿等
+     *   （3）continuous zeroes is represented only one simple chinese character: "零" , for example:6007 should be showing:"陆仟零柒"
+     *  output specific：
+     *     positive integer or zero.
      * </pre>
      *
-     * @param num  参考input specific
-     * @return 参考 output specific
-     *
+     * @param num  positive integer or zero.
+     * @return chinese number according to param.
      */
     public static String num2CHS(long num){
 
