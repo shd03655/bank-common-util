@@ -1,6 +1,5 @@
 package com.core.bank.util.validator;
 
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -35,17 +34,7 @@ public class IdValidator extends AbstractValidator {
             return false;
         }
 
-        //1.length equals 18
-        if (!checkLength(idNo, 18, LEN_CHECK_MODE.EQ)) {
-            return false;
-        }
-
-        //2.the 7~14th char are valid date and the year must equals or less than now.
-        if (!checkBirthday(idNo)) {
-            return false;
-        }
-
-        return checkVerifyCode(idNo);
+        return checkLength(idNo, 18, LEN_CHECK_MODE.EQ) && checkBirthday(idNo) && checkVerifyCode(idNo);
 
     }
 

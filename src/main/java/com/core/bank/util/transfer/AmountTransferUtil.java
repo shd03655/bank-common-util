@@ -18,49 +18,6 @@ import java.util.Map;
  */
 public class AmountTransferUtil {
 
-    final static Map<Character, Integer> chUnit = new HashMap<>();
-    final static Map<Character, Integer> chNum = new HashMap<>();
-    static {
-        chUnit.put('拾', 10);
-        chUnit.put('佰', 100);
-        chUnit.put('仟', 1000);
-        chUnit.put('万', 10000);
-        chUnit.put('亿', 100000000);
-
-        chNum.put('零', 0);
-        chNum.put('壹', 1);
-        chNum.put('贰', 2);
-        chNum.put('叁', 3);
-        chNum.put('肆', 4);
-        chNum.put('伍', 5);
-        chNum.put('陆', 6);
-        chNum.put('柒', 7);
-        chNum.put('捌', 8);
-        chNum.put('玖', 9);
-
-    }
-
-    final static Map<Integer, Character> numCh = new HashMap<>();
-    static {
-        numCh.put(10, '拾');
-        numCh.put(100, '佰');
-        numCh.put(1000, '仟');
-        numCh.put(10000, '万');
-        numCh.put(100000000, '亿');
-
-        numCh.put(0, '零');
-        numCh.put(1, '壹');
-        numCh.put(2, '贰');
-        numCh.put(3, '叁');
-        numCh.put(4, '肆');
-        numCh.put(5, '伍');
-        numCh.put(6, '陆');
-        numCh.put(7, '柒');
-        numCh.put(8, '捌');
-        numCh.put(9, '玖');
-
-    }
-
     /**
      * <pre>
      *  input specific:
@@ -197,6 +154,49 @@ public class AmountTransferUtil {
         result = mid.toString();
 
         return result;
+    }
+
+    final static Map<Character, Integer> chUnit = new HashMap<>();
+    final static Map<Character, Integer> chNum = new HashMap<>();
+    static {
+        chUnit.put('拾', 10);
+        chUnit.put('佰', 100);
+        chUnit.put('仟', 1000);
+        chUnit.put('万', 10000);
+        chUnit.put('亿', 100000000);
+
+        chNum.put('零', 0);
+        chNum.put('壹', 1);
+        chNum.put('贰', 2);
+        chNum.put('叁', 3);
+        chNum.put('肆', 4);
+        chNum.put('伍', 5);
+        chNum.put('陆', 6);
+        chNum.put('柒', 7);
+        chNum.put('捌', 8);
+        chNum.put('玖', 9);
+
+    }
+
+    final static Map<Integer, Character> numCh = new HashMap<>();
+    static {
+        numCh.put(10, '拾');
+        numCh.put(100, '佰');
+        numCh.put(1000, '仟');
+        numCh.put(10000, '万');
+        numCh.put(100000000, '亿');
+
+        numCh.put(0, '零');
+        numCh.put(1, '壹');
+        numCh.put(2, '贰');
+        numCh.put(3, '叁');
+        numCh.put(4, '肆');
+        numCh.put(5, '伍');
+        numCh.put(6, '陆');
+        numCh.put(7, '柒');
+        numCh.put(8, '捌');
+        numCh.put(9, '玖');
+
     }
 
 }
